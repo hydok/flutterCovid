@@ -17,9 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Flutter Demo',
-      initialBinding: BindingsBuilder((){
-        Get.put(CovidController());
-      }),
+      initialBinding: BindingsBuilder((){Get.put(CovidController());}),  //not use
       theme: ThemeData(
 
         primarySwatch: Colors.blue,
