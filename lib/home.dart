@@ -13,6 +13,7 @@ class Home extends GetView<CovidController> {
   @override
   Widget build(BuildContext context) {
     headerTopZone = Get.mediaQuery.padding.top + AppBar().preferredSize.height;
+
     return Scaffold(
       appBar: AppBar(
         leading: const Icon(
@@ -87,16 +88,35 @@ class Home extends GetView<CovidController> {
                   ),
                   const SizedBox(width: 5,),
                   Text(
-                    controller.covidData.value.stateDt ?? '',
+                    '1234',
                     style: TextStyle(color: Colors.pinkAccent,fontSize: 50,fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
-              const Text('1234',style: TextStyle(color: Colors.white,fontSize: 20),),
+              Text(controller.covidData.value.decideCnt ?? '', style: TextStyle(color: Colors.white,fontSize: 20),),
             ],
           )),
+
+          //하단 박스...
+          Positioned(
+            bottom: 0,
+            child: ClipRRect(borderRadius: BorderRadius.only(topLeft: Radius.circular(15),topRight: Radius.circular(15)),
+              child: Container(
+                color: Colors.white,
+                height:MediaQuery.of(context).size.height/1.6,
+                width: MediaQuery.of(context).size.width,
+
+              ),
+            ),
+          )
+
+
         ],
       ),
     );
+
   }
+
+
+
 }
